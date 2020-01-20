@@ -2,7 +2,7 @@
 
 from sys import argv, exit
 from configparser import ConfigParser as parser
-from os import chdir, listdir
+from os import chdir, listdir, path
 arguments = argv
 
 
@@ -27,10 +27,13 @@ def lsVideos(path):
     chdir(path)
     videos = listdir('.')
     for i in videos:
-        print(i)
+        return i
 
 def getSize(files):
-    pass
+    s = path.getsize(files)
+    return s
 
 
-lsVideos(setConfig())
+#lsVideos(setConfig())
+s = getSize(lsVideos(setConfig()))
+print(s)
