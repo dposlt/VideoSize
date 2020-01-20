@@ -25,7 +25,12 @@ def setConfig():
 
 def lsVideos(path):
     chdir(path)
-    return listdir('.')
+    videos = listdir('.')
+    for i in videos:
+        print(i)
 
-s = lsVideos(setConfig())
-print(s)
+def getSize(files):
+    pass
+
+
+lsVideos(setConfig())
