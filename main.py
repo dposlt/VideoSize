@@ -24,11 +24,12 @@ def setConfig():
     if 'PATH' in config:
         return config['PATH']['VideosDir']
 
-def lsVideos(path):
-    chdir(path)
+def lsVideos(filePath):
+    chdir(filePath)
     videos = listdir('.')
     for i in videos:
-        print(f'{i} : {size.getSize(i)} bites')
+        bytes = path.getsize(i)
+        print(f'{i} : {size.convert_bytes(bytes)} ')
 
 
 lsVideos(setConfig())
